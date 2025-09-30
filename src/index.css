@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-pixel bg-brick-dark text-cream overflow-hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  
+  #root {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@layer components {
+  .pixel-border {
+    @apply border-4 border-brick-light;
+  }
+  
+  .pixel-button {
+    @apply bg-brick-light text-brick-dark border-2 border-brick-brown rounded-lg px-4 py-2 font-pixel text-xs hover:bg-brick-brown hover:text-cream transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+  
+  .pixel-input {
+    @apply bg-cream text-brick-dark border-2 border-brick-brown rounded-lg px-3 py-2 font-pixel text-xs focus:outline-none focus:border-brick-light;
+  }
+  
+  .pixel-card {
+    @apply bg-brick-brown border-4 border-brick-light rounded-xl p-4;
+  }
+  
+  .pixel-text {
+    @apply font-pixel text-xs leading-relaxed;
+  }
+  
+  .pixel-heading {
+    @apply font-pixel text-sm font-bold;
+  }
+  
+  .pixel-subheading {
+    @apply font-pixel text-xs font-bold;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 0px #5A5A5A;
+  }
+
+  .pixel-shadow {
+    box-shadow: 4px 4px 0px #919191;
+  }
+
+  .pixel-shadow-sm {
+    box-shadow: 2px 2px 0px #919191;
+  }
+}
