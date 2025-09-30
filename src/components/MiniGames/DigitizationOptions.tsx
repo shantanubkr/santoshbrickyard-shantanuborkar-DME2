@@ -50,12 +50,13 @@ const DigitizationOption: React.FC<DigitizationOptionProps> = ({
 
   return (
     <div
-      className={`cursor-pointer transition-all duration-200 rounded-lg p-6 ${
+      className={`cursor-pointer transition-all duration-200 rounded-lg p-8 ${
         isSelected ? 'ring-4 ring-brick-light' : ''
       }`}
       style={{
         backgroundColor: isSelected ? '#FFF4E6' : '#FFF4E6',
-        border: '2px solid #64250A'
+        border: '2px solid #64250A',
+        minHeight: '300px'
       }}
       onClick={onSelect}
       onMouseEnter={(e) => {
@@ -82,20 +83,20 @@ const DigitizationOption: React.FC<DigitizationOptionProps> = ({
       
       <div className="space-y-2 text-base">
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Cost:</span>
-          <span style={{ color: cost > 0 ? '#DC2626' : '#16A34A' }}>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Cost:</span>
+          <span className="whitespace-nowrap" style={{ color: cost > 0 ? '#DC2626' : '#16A34A' }}>
             {cost > 0 ? `₹${cost}` : 'Free'}
           </span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Reputation:</span>
-          <span style={{ color: reputationEffect > 0 ? '#16A34A' : reputationEffect < 0 ? '#DC2626' : '#6B7280' }}>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Reputation:</span>
+          <span className="whitespace-nowrap" style={{ color: reputationEffect > 0 ? '#16A34A' : reputationEffect < 0 ? '#DC2626' : '#6B7280' }}>
             {reputationEffect > 0 ? '+' : ''}{reputationEffect}
           </span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Demand:</span>
-          <span className="font-bold" style={{ color: getDemandColor() }}>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Demand:</span>
+          <span className="whitespace-nowrap font-bold" style={{ color: getDemandColor() }}>
             {demandEffect.toUpperCase()}
           </span>
         </div>

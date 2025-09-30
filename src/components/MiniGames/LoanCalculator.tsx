@@ -42,15 +42,16 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
     }}>
       <h3 className="pixel-heading text-lg text-center mb-6" style={{ color: '#64250A' }}>Loan Options</h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         {/* Small Loan */}
         <div
-          className={`cursor-pointer transition-all duration-200 rounded-lg p-4 ${
+          className={`cursor-pointer transition-all duration-200 rounded-lg p-6 ${
             selectedLoan === 'small' ? 'ring-4 ring-brick-light' : ''
           }`}
           style={{
             backgroundColor: '#FFF4E6',
-            border: '2px solid #64250A'
+            border: '2px solid #64250A',
+            minHeight: '320px'
           }}
           onClick={() => handleLoanSelect('small')}
           onMouseEnter={(e) => {
@@ -69,22 +70,22 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
             <h4 className="pixel-heading text-base mb-2" style={{ color: '#64250A' }}>Small Loan</h4>
             <p className="pixel-text text-sm mb-3" style={{ color: '#64250A' }}>{loans.small.description}</p>
             
-            <div className="space-y-1 text-sm">
+            <div className="space-y-1 text-xs">
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Amount:</span>
-                <span className="" style={{ color: '#16A34A' }}>+₹{loans.small.amount}</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Amount:</span>
+                <span className="whitespace-nowrap" style={{ color: '#16A34A' }}>+₹{loans.small.amount}</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Repay:</span>
-                <span className="" style={{ color: '#DC2626' }}>₹{loans.small.repayment}</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Repay:</span>
+                <span className="whitespace-nowrap" style={{ color: '#DC2626' }}>₹{loans.small.repayment}</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Duration:</span>
-                <span className="" style={{ color: '#64250A' }}>{loans.small.duration} events</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Duration:</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>{loans.small.duration} events</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Eco Impact:</span>
-                <span className="" style={{ color: '#16A34A' }}>0</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Eco Impact:</span>
+                <span className="whitespace-nowrap" style={{ color: '#16A34A' }}>0</span>
               </div>
             </div>
           </div>
@@ -92,12 +93,13 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
 
         {/* Big Loan */}
         <div
-          className={`cursor-pointer transition-all duration-200 rounded-lg p-4 ${
+          className={`cursor-pointer transition-all duration-200 rounded-lg p-6 ${
             selectedLoan === 'big' ? 'ring-4 ring-brick-light' : ''
           }`}
           style={{
             backgroundColor: '#FFF4E6',
-            border: '2px solid #64250A'
+            border: '2px solid #64250A',
+            minHeight: '320px'
           }}
           onClick={() => handleLoanSelect('big')}
           onMouseEnter={(e) => {
@@ -116,22 +118,22 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
             <h4 className="pixel-heading text-base mb-2 " style={{ color: '#64250A' }}>Big Loan</h4>
             <p className="pixel-text text-sm mb-3 " style={{ color: '#64250A' }}>{loans.big.description}</p>
             
-            <div className="space-y-1 text-sm">
+            <div className="space-y-1 text-xs">
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Amount:</span>
-                <span className="" style={{ color: '#16A34A' }}>+₹{loans.big.amount}</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Amount:</span>
+                <span className="whitespace-nowrap" style={{ color: '#16A34A' }}>+₹{loans.big.amount}</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Repay:</span>
-                <span className="" style={{ color: '#DC2626' }}>₹{loans.big.repayment}</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Repay:</span>
+                <span className="whitespace-nowrap" style={{ color: '#DC2626' }}>₹{loans.big.repayment}</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Duration:</span>
-                <span className="" style={{ color: '#64250A' }}>{loans.big.duration} events</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Duration:</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>{loans.big.duration} events</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Eco Impact:</span>
-                <span className="" style={{ color: '#DC2626' }}>{loans.big.ecoPenalty}</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Eco Impact:</span>
+                <span className="whitespace-nowrap" style={{ color: '#DC2626' }}>{loans.big.ecoPenalty}</span>
               </div>
             </div>
           </div>
@@ -139,12 +141,13 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
 
         {/* No Loan */}
         <div
-          className={`cursor-pointer transition-all duration-200 rounded-lg p-4 ${
+          className={`cursor-pointer transition-all duration-200 rounded-lg p-6 ${
             selectedLoan === 'none' ? 'ring-4 ring-brick-light' : ''
           }`}
           style={{
             backgroundColor: '#FFF4E6',
-            border: '2px solid #64250A'
+            border: '2px solid #64250A',
+            minHeight: '320px'
           }}
           onClick={() => handleLoanSelect('none')}
           onMouseEnter={(e) => {
@@ -163,22 +166,22 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
             <h4 className="pixel-heading text-base mb-2 " style={{ color: '#64250A' }}>No Loan</h4>
             <p className="pixel-text text-sm mb-3 " style={{ color: '#64250A' }}>Stay debt-free</p>
             
-            <div className="space-y-1 text-sm">
+            <div className="space-y-1 text-xs">
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Cash:</span>
-                <span className="" style={{ color: '#64250A' }}>₹{currentCash}</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Cash:</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>₹{currentCash}</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Debt:</span>
-                <span className="" style={{ color: '#16A34A' }}>₹0</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Debt:</span>
+                <span className="whitespace-nowrap" style={{ color: '#16A34A' }}>₹0</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Risk:</span>
-                <span className="" style={{ color: '#16A34A' }}>None</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Risk:</span>
+                <span className="whitespace-nowrap" style={{ color: '#16A34A' }}>None</span>
               </div>
               <div className="flex justify-between">
-                <span className="" style={{ color: '#64250A' }}>Growth:</span>
-                <span className="" style={{ color: '#EAB308' }}>Slow</span>
+                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Growth:</span>
+                <span className="whitespace-nowrap" style={{ color: '#EAB308' }}>Slow</span>
               </div>
             </div>
           </div>

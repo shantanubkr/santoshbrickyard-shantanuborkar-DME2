@@ -35,12 +35,13 @@ const BrickCard: React.FC<BrickCardProps> = ({
 
   return (
     <div
-      className={`cursor-pointer transition-all duration-200 rounded-lg p-4 ${
+      className={`cursor-pointer transition-all duration-200 rounded-lg p-6 ${
         isSelected ? 'ring-4 ring-brick-light' : ''
       }`}
       style={{
         backgroundColor: isSelected ? '#FFF4E6' : '#FFF4E6',
-        border: '2px solid #64250A'
+        border: '2px solid #64250A',
+        minHeight: '280px'
       }}
       onClick={onSelect}
       onMouseEnter={(e) => {
@@ -65,34 +66,34 @@ const BrickCard: React.FC<BrickCardProps> = ({
       
       <div className="space-y-2 text-base">
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Cost:</span>
-          <span style={{ color: '#DC2626' }}>₹{cost}</span>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Cost:</span>
+          <span className="whitespace-nowrap" style={{ color: '#DC2626' }}>₹{cost}</span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Selling Price:</span>
-          <span style={{ color: '#16A34A' }}>₹{sellingPrice}</span>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Selling Price:</span>
+          <span className="whitespace-nowrap" style={{ color: '#16A34A' }}>₹{sellingPrice}</span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Profit:</span>
-          <span style={{ color: profit > 0 ? '#16A34A' : '#DC2626' }}>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Profit:</span>
+          <span className="whitespace-nowrap" style={{ color: profit > 0 ? '#16A34A' : '#DC2626' }}>
             ₹{profit} ({profitMargin}%)
           </span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Eco Impact:</span>
-          <span style={{ color: ecoImpact > 0 ? '#16A34A' : '#DC2626' }}>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Eco Impact:</span>
+          <span className="whitespace-nowrap" style={{ color: ecoImpact > 0 ? '#16A34A' : '#DC2626' }}>
             {ecoImpact > 0 ? '+' : ''}{ecoImpact}
           </span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Reputation:</span>
-          <span style={{ color: reputationEffect > 0 ? '#16A34A' : '#DC2626' }}>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Reputation:</span>
+          <span className="whitespace-nowrap" style={{ color: reputationEffect > 0 ? '#16A34A' : '#DC2626' }}>
             {reputationEffect > 0 ? '+' : ''}{reputationEffect}
           </span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#64250A' }}>Demand:</span>
-          <span style={{ color: '#2563EB' }}>{demandPercent}%</span>
+          <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Demand:</span>
+          <span className="whitespace-nowrap" style={{ color: '#2563EB' }}>{demandPercent}%</span>
         </div>
       </div>
       

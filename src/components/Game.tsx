@@ -406,13 +406,13 @@ const Game: React.FC = () => {
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="relative max-w-4xl w-full p-4 z-10">
+        <div className="relative max-w-6xl w-full p-6 z-10">
           {showMiniGame === 'brickCard' && (
             <div className="space-y-4">
               <h2 className="pixel-heading text-2xl text-center text-brick-light mb-6">
                 Choose Your Brick Type
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <BrickCard
                   brickType="clay"
                   cost={200}
@@ -472,7 +472,7 @@ const Game: React.FC = () => {
               <h2 className="pixel-heading text-2xl text-center text-brick-light mb-6">
                 Choose Your Digital Strategy
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <DigitizationOptions
                   option="webpage"
                   cost={getRandomInt(180, 220)}

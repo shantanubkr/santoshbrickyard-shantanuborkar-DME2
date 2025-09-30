@@ -63,9 +63,10 @@ const NegotiationSlider: React.FC<NegotiationSliderProps> = ({
   const profitPercent = ((profit / basePrice) * 100).toFixed(1);
 
   return (
-    <div className="max-w-md mx-auto p-6 rounded-lg" style={{ 
+    <div className="max-w-lg mx-auto p-8 rounded-lg" style={{ 
       backgroundColor: '#FFF4E6',
-      border: '2px solid #64250A'
+      border: '2px solid #64250A',
+      minHeight: '400px'
     }}>
       <div className="text-center mb-4">
         <div className="text-4xl mb-2">{getClientIcon()}</div>
