@@ -66,10 +66,10 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
         >
           <div className="text-center">
             <div className="text-3xl mb-2">🏦</div>
-            <h4 className="pixel-heading text-sm mb-2" style={{ color: '#64250A' }}>Small Loan</h4>
-            <p className="pixel-text text-xs mb-3" style={{ color: '#64250A' }}>{loans.small.description}</p>
+            <h4 className="pixel-heading text-base mb-2" style={{ color: '#64250A' }}>Small Loan</h4>
+            <p className="pixel-text text-sm mb-3" style={{ color: '#64250A' }}>{loans.small.description}</p>
             
-            <div className="space-y-1 text-xs">
+            <div className="space-y-1 text-sm">
               <div className="flex justify-between">
                 <span className="" style={{ color: '#64250A' }}>Amount:</span>
                 <span className="" style={{ color: '#16A34A' }}>+₹{loans.small.amount}</span>
@@ -113,10 +113,10 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
         >
           <div className="text-center">
             <div className="text-3xl mb-2">💰</div>
-            <h4 className="pixel-heading text-sm mb-2 " style={{ color: '#64250A' }}>Big Loan</h4>
-            <p className="pixel-text text-xs mb-3 " style={{ color: '#64250A' }}>{loans.big.description}</p>
+            <h4 className="pixel-heading text-base mb-2 " style={{ color: '#64250A' }}>Big Loan</h4>
+            <p className="pixel-text text-sm mb-3 " style={{ color: '#64250A' }}>{loans.big.description}</p>
             
-            <div className="space-y-1 text-xs">
+            <div className="space-y-1 text-sm">
               <div className="flex justify-between">
                 <span className="" style={{ color: '#64250A' }}>Amount:</span>
                 <span className="" style={{ color: '#16A34A' }}>+₹{loans.big.amount}</span>
@@ -160,10 +160,10 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
         >
           <div className="text-center">
             <div className="text-3xl mb-2">🚫</div>
-            <h4 className="pixel-heading text-sm mb-2 " style={{ color: '#64250A' }}>No Loan</h4>
-            <p className="pixel-text text-xs mb-3 " style={{ color: '#64250A' }}>Stay debt-free</p>
+            <h4 className="pixel-heading text-base mb-2 " style={{ color: '#64250A' }}>No Loan</h4>
+            <p className="pixel-text text-sm mb-3 " style={{ color: '#64250A' }}>Stay debt-free</p>
             
-            <div className="space-y-1 text-xs">
+            <div className="space-y-1 text-sm">
               <div className="flex justify-between">
                 <span className="" style={{ color: '#64250A' }}>Cash:</span>
                 <span className="" style={{ color: '#64250A' }}>₹{currentCash}</span>

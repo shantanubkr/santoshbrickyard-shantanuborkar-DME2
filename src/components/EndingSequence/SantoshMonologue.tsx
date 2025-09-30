@@ -62,7 +62,7 @@ const SantoshMonologue: React.FC<SantoshMonologueProps> = ({ onContinue }) => {
             </div>
           </div>
           
-          <div className="pixel-text text-lg leading-relaxed mb-6 text-shadow" style={{ color: '#64250A' }}>
+          <div className="pixel-text text-xl leading-relaxed mb-6 text-shadow" style={{ color: '#64250A' }}>
             {displayText.split('\n').map((line, index) => (
               <div key={index} className="mb-2">
                 {line}

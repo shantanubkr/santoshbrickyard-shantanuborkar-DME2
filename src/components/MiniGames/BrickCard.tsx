@@ -63,7 +63,7 @@ const BrickCard: React.FC<BrickCardProps> = ({
         <h3 className="pixel-heading text-lg" style={{ color: '#64250A' }}>{getBrickName()}</h3>
       </div>
       
-      <div className="space-y-2 text-sm">
+      <div className="space-y-2 text-base">
         <div className="flex justify-between">
           <span style={{ color: '#64250A' }}>Cost:</span>
           <span style={{ color: '#DC2626' }}>₹{cost}</span>

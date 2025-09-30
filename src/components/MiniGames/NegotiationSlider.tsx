@@ -72,14 +72,14 @@ const NegotiationSlider: React.FC<NegotiationSliderProps> = ({
         <h3 className="pixel-heading text-lg" style={{ color: '#64250A' }}>
           {clientType === 'big' ? 'Big Builder' : 'Small Contractor'}
         </h3>
-        <p className="pixel-text text-sm" style={{ color: '#64250A' }}>
+        <p className="pixel-text text-base" style={{ color: '#64250A' }}>
           Risk Level: <span className={getRiskColor()}>{riskLevel.toUpperCase()}</span>
         </p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <label className="pixel-text text-sm block mb-2" style={{ color: '#64250A' }}>
+          <label className="pixel-text text-base block mb-2" style={{ color: '#64250A' }}>
             Negotiated Price: ₹{price}
           </label>
           <input
@@ -92,13 +92,13 @@ const NegotiationSlider: React.FC<NegotiationSliderProps> = ({
             style={{ backgroundColor: '#64250A' }}
             disabled={isNegotiating}
           />
-          <div className="flex justify-between text-xs mt-1" style={{ color: '#64250A' }}>
+          <div className="flex justify-between text-sm mt-1" style={{ color: '#64250A' }}>
             <span>₹{minPrice}</span>
             <span>₹{maxPrice}</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 text-xs">
+        <div className="grid grid-cols-2 gap-4 text-sm">
           <div className="text-center">
             <span className="block" style={{ color: '#64250A' }}>Base Price</span>
             <span className="pixel-text" style={{ color: '#64250A' }}>₹{basePrice}</span>

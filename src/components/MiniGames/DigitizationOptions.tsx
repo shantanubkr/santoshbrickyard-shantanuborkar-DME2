@@ -76,11 +76,11 @@ const DigitizationOption: React.FC<DigitizationOptionProps> = ({
         </h3>
       </div>
       
-      <p className="text-sm mb-4" style={{ color: '#64250A' }}>
+      <p className="text-base mb-4" style={{ color: '#64250A' }}>
         {description}
       </p>
       
-      <div className="space-y-2 text-sm">
+      <div className="space-y-2 text-base">
         <div className="flex justify-between">
           <span style={{ color: '#64250A' }}>Cost:</span>
           <span style={{ color: cost > 0 ? '#DC2626' : '#16A34A' }}>

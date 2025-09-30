@@ -55,7 +55,7 @@ const DialogBox: React.FC<DialogBoxProps> = ({ speaker, text, choices, onChoiceS
           </div>
         </div>
         
-        <div className="pixel-text leading-relaxed mb-6 max-h-32 overflow-y-auto" style={{ color: '#64250A' }}>
+        <div className="pixel-text leading-relaxed mb-6 max-h-32 overflow-y-auto text-lg" style={{ color: '#64250A' }}>
           {displayText}
           {isTyping && <span className="animate-blink">|</span>}
         </div>

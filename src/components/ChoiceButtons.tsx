@@ -12,7 +12,7 @@ const ChoiceButtons: React.FC<ChoiceButtonsProps> = ({ choices, onChoiceSelect }
       {choices.map((choice, index) => (
         <button
           key={index}
-          className="w-full text-left transition-all duration-200 active:scale-95 rounded-lg"
+          className="w-full text-left transition-all duration-200 active:scale-95 rounded-lg text-lg"
           style={{ 
             animationDelay: `${index * 0.1}s`,
             backgroundColor: '#64250A',
