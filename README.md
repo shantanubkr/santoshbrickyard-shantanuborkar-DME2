@@ -30,17 +30,55 @@ A pixelated interactive business simulation game built with **React + TypeScript
 
 ### Installation
 
-1. **Install dependencies:**
+**Prerequisites:**
+- **Node.js** (version 16 or higher) - [Download here](https://nodejs.org/)
+- **Git** - [Download here](https://git-scm.com/)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/shantanubkr/santoshbrickyard-shantanuborkar-DME2.git
+   cd santoshbrickyard-shantanuborkar-DME2
+   ```
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. **Start development server:**
+3. **Start the game** (Choose one method):
+
+   **Method A: Using npm**
    ```bash
    npm run dev
    ```
 
-3. **Open your browser** to `http://localhost:5173`
+   **Method B: Using the launcher script**
+   - **Windows**: Double-click `start-game.bat`
+   - **macOS/Linux**: Run `./start-game.sh`
+
+4. **Open your browser** to `http://localhost:5173`
+
+### 🛠️ Troubleshooting
+
+If you encounter issues:
+
+1. **"Command not found: npm"**
+   - Install Node.js from https://nodejs.org/
+   - Restart your terminal
+
+2. **"Port 5173 is already in use"**
+   - Kill the process using the port or restart your computer
+
+3. **"Module not found" errors**
+   - Delete `node_modules` folder and `package-lock.json`
+   - Run `npm install` again
+
+4. **Game won't load**
+   - Check browser console (F12) for errors
+   - Ensure all dependencies are installed
+   - Try clearing browser cache
+
+For detailed setup instructions, see [SETUP_INSTRUCTIONS.md](./SETUP_INSTRUCTIONS.md)
 
 ### Build for Production
 
