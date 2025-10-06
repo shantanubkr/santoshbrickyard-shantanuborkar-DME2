@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { GameState, GameEvent, Choice, events, initialGameState, randomTroubles, getRandomInt, ALL_EVENT_TYPES } from '../data/events';
 import StatsBar from './StatsBar';
+import EventProgressBar from './EventProgressBar';
 import DialogBox from './DialogBox';
 import BrickCard from './MiniGames/BrickCard';
 import NegotiationSlider from './MiniGames/NegotiationSlider';
@@ -80,19 +81,26 @@ const Game: React.FC = () => {
   const showEvent = (event: GameEvent) => {
     setCurrentEvent(event);
     
-    // Track seen events
+    // Don't mark events as seen when they're triggered, only when completed
+    updateGameState({ 
+      currentScene: event.scene,
+      eventHistory: [...gameState.eventHistory, event.name]
+    });
+  };
+
+  const markEventAsCompleted = (eventName: string) => {
     const newSeenEvents = new Set(gameState.seenEvents);
-    newSeenEvents.add(event.id);
+    newSeenEvents.add(eventName);
     
     // Check if all events have been seen
     const allEventsSeen = ALL_EVENT_TYPES.every(eventType => newSeenEvents.has(eventType));
     
     updateGameState({ 
-      currentScene: event.scene,
-      eventHistory: [...gameState.eventHistory, event.id],
       seenEvents: newSeenEvents,
       allEventsSeen
     });
+    
+    return { allEventsSeen, newSeenEvents };
   };
 
   const handleChoice = (choice: Choice) => {
@@ -121,6 +129,19 @@ const Game: React.FC = () => {
       const newState = { ...gameState, ...choice.effects };
       updateGameState(choice.effects);
       
+      // Mark current event as completed if it has effects (meaning it's finished)
+      if (currentEvent && ALL_EVENT_TYPES.includes(currentEvent.name)) {
+        const { allEventsSeen } = markEventAsCompleted(currentEvent.name);
+        if (allEventsSeen) {
+          setIsGameOver(true);
+          setShowSantoshMonologue(true);
+          return;
+        }
+        // Event completed, trigger next random event
+        triggerRandomEvent();
+        return;
+      }
+      
       if (checkGameOver(newState)) {
         return;
       }
@@ -145,9 +166,9 @@ const Game: React.FC = () => {
   const triggerRandomEvent = () => {
     if (isGameOver) return;
 
-    // Special case: if loan is due, force finance event
+    // Special case: if loan is due, force repayment event
     if (gameState.loanAmount > 0 && gameState.loanDue <= 0) {
-      showEvent(events.finance);
+      showEvent(events.repayment);
       return;
     }
 
@@ -233,7 +254,18 @@ const Game: React.FC = () => {
       lastEventType: 'brickMaking'
     });
     
+    // Mark brickMaking event as completed
+    const { allEventsSeen } = markEventAsCompleted('brickMaking');
+    
     setShowMiniGame(null);
+    
+    // Check if all events are completed
+    if (allEventsSeen) {
+      setIsGameOver(true);
+      setShowSantoshMonologue(true);
+      return;
+    }
+    
     triggerRandomEvent();
   };
 
@@ -267,7 +299,18 @@ const Game: React.FC = () => {
       });
     }
     
+    // Mark client event as completed
+    const { allEventsSeen } = markEventAsCompleted('client');
+    
     setShowMiniGame(null);
+    
+    // Check if all events are completed
+    if (allEventsSeen) {
+      setIsGameOver(true);
+      setShowSantoshMonologue(true);
+      return;
+    }
+    
     triggerRandomEvent();
   };
 
@@ -300,7 +343,18 @@ const Game: React.FC = () => {
       });
     }
     
+    // Mark finance event as completed
+    const { allEventsSeen } = markEventAsCompleted('finance');
+    
     setShowMiniGame(null);
+    
+    // Check if all events are completed
+    if (allEventsSeen) {
+      setIsGameOver(true);
+      setShowSantoshMonologue(true);
+      return;
+    }
+    
     triggerRandomEvent();
   };
 
@@ -314,9 +368,21 @@ const Game: React.FC = () => {
       { cash: 0, reputation: 0, demand: 'low' as const, totalEvents: gameState.totalEvents + 1, lastEventType: 'digitization' };
 
     updateGameState(effects);
+    
+    // Mark digitization event as completed
+    const { allEventsSeen } = markEventAsCompleted('digitization');
+    
     setShowMiniGame(null);
     setCurrentEvent(null);
     setSelectedDigitizationOption(null);
+    
+    // Check if all events are completed
+    if (allEventsSeen) {
+      setIsGameOver(true);
+      setShowSantoshMonologue(true);
+      return;
+    }
+    
     triggerRandomEvent();
   };
 
@@ -537,6 +603,9 @@ const Game: React.FC = () => {
       
       {/* Stats Bar */}
       <StatsBar gameState={gameState} />
+
+      {/* Event Progress Bar */}
+      <EventProgressBar gameState={gameState} />
 
       {/* Main Content Area with Characters and Dialogue */}
       <div className="flex-1 relative">

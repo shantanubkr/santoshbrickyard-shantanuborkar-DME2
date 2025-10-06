@@ -80,10 +80,6 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
                 <span className="whitespace-nowrap" style={{ color: '#DC2626' }}>₹{loans.small.repayment}</span>
               </div>
               <div className="flex justify-between">
-                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Duration:</span>
-                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>{loans.small.duration} events</span>
-              </div>
-              <div className="flex justify-between">
                 <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Eco Impact:</span>
                 <span className="whitespace-nowrap" style={{ color: '#16A34A' }}>0</span>
               </div>
@@ -126,10 +122,6 @@ const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onLoanSelect, currentCa
               <div className="flex justify-between">
                 <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Repay:</span>
                 <span className="whitespace-nowrap" style={{ color: '#DC2626' }}>₹{loans.big.repayment}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Duration:</span>
-                <span className="whitespace-nowrap" style={{ color: '#64250A' }}>{loans.big.duration} events</span>
               </div>
               <div className="flex justify-between">
                 <span className="whitespace-nowrap" style={{ color: '#64250A' }}>Eco Impact:</span>
